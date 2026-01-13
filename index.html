@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sunny A - Coffee & Vibes</title>
+<link rel="icon" type="image/x-icon" href="icon.ico">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+    --bg:#0f0b14;
+    --card:#18121f;
+    --text:#f0e6ff;
+    --accent:#ff6bcb;
+    --accent2:#00f0ff;
+    --accent3:#d0ff14;
+    --border:rgba(255,107,203,0.18);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Manrope',sans-serif;
+    line-height:1.6;
+}
+
+/* ===== HEADER ===== */
+header{
+    height:100vh;
+    min-height:720px;
+    background:
+    linear-gradient(135deg,rgba(15,11,20,.92),rgba(25,15,35,.88)),
+    url('images/header-bg.jpg') center/cover no-repeat;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+}
+
+h1{
+    font-family:'Orbitron',sans-serif;
+    font-size:clamp(4.5rem,12vw,9.5rem);
+    letter-spacing:8px;
+    background:linear-gradient(90deg,#ff6bcb,#00f0ff,#d0ff14);
+    -webkit-background-clip:text;
+    color:transparent;
+}
+
+.subtitle{
+    font-size:clamp(1.5rem,4.5vw,2.4rem);
+    margin:1em 0 2.2em;
+    color:#d0c0ff;
+}
+
+.btn{
+    border:2px solid var(--accent);
+    color:var(--accent);
+    padding:16px 48px;
+    border-radius:50px;
+    font-size:1.3rem;
+    font-weight:600;
+    text-decoration:none;
+    transition:.4s;
+}
+.btn:hover{
+    background:var(--accent);
+    color:#0f0b14;
+    box-shadow:0 0 40px rgba(255,107,203,.7);
+    transform:translateY(-4px);
+}
+
+.container{
+    max-width:1240px;
+    margin:0 auto;
+    padding:0 25px;
+}
+
+h2{
+    font-family:'Orbitron',sans-serif;
+    text-align:center;
+    font-size:clamp(2.8rem,6vw,4.8rem);
+    margin:100px 0 50px;
+    background:linear-gradient(90deg,#ff6bcb,#00f0ff);
+    -webkit-background-clip:text;
+    color:transparent;
+}
+
+/* ===== ГАЛЕРЕЯ С КНОПКАМИ ===== */
+.gallery{
+    position:relative;
+    height:520px;
+    border-radius:24px;
+    border:1px solid var(--border);
+    overflow:hidden;
+    margin-bottom:80px;
+}
+
+.gallery-track{
+    display:flex;
+    height:100%;
+    transition:transform .6s ease;
+}
+
+.gallery-item{
+    min-width:100%;
+    height:100%;
+    background-size: contain; /* Показываем всю картинку без увеличения */
+    background-position:center; /* По центру блока */
+    background-repeat:no-repeat; /* Не повторяем фон */
+}
+
+
+/* КНОПКИ */
+.gallery-btn{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    width:64px;
+    height:64px;
+    border-radius:50%;
+    border:none;
+    background:rgba(0,0,0,.55);
+    color:#fff;
+    font-size:2rem;
+    cursor:pointer;
+    z-index:5;
+    transition:.3s;
+}
+.gallery-btn:hover{
+    background:rgba(255,107,203,.85);
+}
+.gallery-btn.prev{left:20px}
+.gallery-btn.next{right:20px}
+
+/* ===== МЕНЮ ===== */
+.menu{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
+    gap:40px;
+    margin:80px 0 120px;
+}
+
+.card{
+    background:var(--card);
+    padding:40px 32px;
+    border-radius:24px;
+    border:1px solid var(--border);
+    transition:.4s;
+}
+.card:hover{
+    transform:translateY(-15px);
+    box-shadow:0 0 60px rgba(255,107,203,.35);
+}
+
+.card h3{
+    font-family:'Orbitron',sans-serif;
+    font-size:2.2rem;
+    margin-bottom:1.6em;
+    background:linear-gradient(90deg,#ff6bcb,#d0ff14);
+    -webkit-background-clip:text;
+    color:transparent;
+    text-align:center;
+}
+
+.card li{
+    display:flex;
+    justify-content:space-between;
+    padding:16px 0;
+    font-size:1.22rem;
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+.price{color:var(--accent2);font-weight:600}
+
+/* ===== ДРУГОЕ ===== */
+.section-center{text-align:center;margin:100px 0}
+
+.worktime-container{
+    display:flex;
+    gap:35px;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+
+.worktime-card{
+    background:var(--card);
+    width:300px;
+    padding:45px 35px;
+    border-radius:24px;
+    border:1px solid var(--border);
+}
+
+footer{
+    background:#0a050d;
+    color:#a08cc9;
+    text-align:center;
+    padding:80px 20px;
+    margin-top:120px;
+}
+</style>
+</head>
+<body>
+
+<header>
+    <div>
+        <h1>SUNNY A</h1>
+        <p class="subtitle">Дәмді кофе • Жайлы атмосфера • Вайб</p>
+        <a href="https://wa.me/77778610792" class="btn">WhatsApp</a>
+    </div>
+</header>
+
+<div class="container">
+
+<h2>Сусындар</h2>
+<div class="gallery">
+    <button class="gallery-btn prev">❮</button>
+    <button class="gallery-btn next">❯</button>
+    <div class="gallery-track">
+        <div class="gallery-item" style="background-image:url('images/drink/1.jpg')"></div>
+        <div class="gallery-item" style="background-image:url('images/drink/2.jpg')"></div>
+        <div class="gallery-item" style="background-image:url('images/drink/3.jpg')"></div>
+        <div class="gallery-item" style="background-image:url('images/drink/4.jpg')"></div>
+        <div class="gallery-item" style="background-image:url('images/drink/5.jpg')"></div>
+        <div class="gallery-item" style="background-image:url('images/drink/6.jpg')"></div>
+        <div class="gallery-item" style="background-image:url('images/drink/7.jpg')"></div>
+        <div class="gallery-item" style="background-image:url('images/drink/8.jpg')"></div>
+        <div class="gallery-item" style="background-image:url('images/drink/9.jpg')"></div>
+        <div class="gallery-item" style="background-image:url('images/drink/10.jpg')"></div>
+    </div>
+</div>
+
+<h2>ИНТЕРЬЕР</h2>
+<div class="gallery">
+    <button class="gallery-btn prev">❮</button>
+    <button class="gallery-btn next">❯</button>
+    <div class="gallery-track">
+        <div class="gallery-item" style="background-image:url('images/int/1.jpg')"></div>
+        <div class="gallery-item" style="background-image:url('images/int/2.jpg')"></div>
+        <div class="gallery-item" style="background-image:url('images/int/3.jpg')"></div>
+        <div class="gallery-item" style="background-image:url('images/int/4.jpg')"></div>
+        <div class="gallery-item" style="background-image:url('images/int/5.jpg')"></div>
+        <div class="gallery-item" style="background-image:url('images/int/6.jpg')"></div>
+        <div class="gallery-item" style="background-image:url('images/int/7.jpg')"></div>
+        <div class="gallery-item" style="background-image:url('images/int/8.jpg')"></div>
+        <div class="gallery-item" style="background-image:url('images/int/9.jpg')"></div>
+    </div>
+</div>
+
+<h2>МӘЗІР</h2>
+<div class="menu">
+    <div class="card">
+        <h3>☕ КОФЕ</h3>
+        <ul>
+            <li>Эспрессо <span class="price">650 ₸</span></li>
+            <li>Американо <span class="price">750 ₸</span></li>
+            <li>Латте <span class="price">950 ₸</span></li>
+            <li>Капучино <span class="price">1050 ₸</span></li>
+            <li>Раф <span class="price">1150 ₸</span></li>
+            <li>Бабл кофе <span class="price">1150 ₸</span></li>
+            <li>Флэт уайт <span class="price">950 ₸</span></li>
+            <li>Ice Латте <span class="price">1000 ₸</span></li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h3>🍵 ШАЙ — 1100 ₸</h3>
+        <ul>
+            <li>Ташкент шайы</li>
+            <li>Жемыс шайы</li>
+            <li>Жидек шайы</li>
+            <li>Зімбір шайы</li>
+            <li>Марокко шай</li>
+            <li>Тай шайы</li>
+            <li>Улун шайы</li>
+            <li>Анчан шайы</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h3>🥤 BUBBLE TEA — 1500 ₸</h3>
+        <ul>
+            <li>Сникерс</li>
+            <li>Орео</li>
+            <li>Құлпынай банан</li>
+            <li>Таро батат</li>
+            <li>Банан-тұзды карамель</li>
+            <li>Шоколад</li>
+            <li>Сакура</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h3>🍹 ЛИМОНАД — 1300 ₸</h3>
+        <ul>
+            <li>Апельсин</li>
+            <li>Манго</li>
+            <li>Клубника</li>
+        </ul>
+    </div>
+</div>
+
+<div class="section-center">
+<h2>ЖҰМЫС УАҚЫТЫ</h2>
+<div class="worktime-container">
+    <div class="worktime-card">
+        <div>Дс — Жм</div>
+        <div>10:00 — 23:00</div>
+        <div style="color:#ff6bcb; margin-top:12px; font-weight:600;">Үзіліс: 13:00 — 15:00</div>
+    </div>
+    <div class="worktime-card">
+        <div>Сб — Жб</div>
+        <div>17:00 — 23:00</div>
+    </div>
+</div>
+</div>
+
+<div class="section-center">
+<h2>БІЗДІ ТАБЫҢЫЗ</h2>
+<p style="font-size:1.4rem; max-width:700px; margin:0 auto 40px; line-height:1.8;">
+<strong>Sunny A</strong><br>
+БҚО, Сырым ауданы, Жымпиты ауылы,<br>
+А.Жумагалиев көшесі, 21A<br><br>
+<strong>Телефон:</strong> +7 (777) 861-07-92
+</p>
+<a href="https://maps.app.goo.gl/2x2xJAeHJJTehtbY8" target="_blank" class="btn">Google Maps →</a>
+</div>
+
+<footer>
+<p>© 2026 Sunny A • D@UREN</p>
+</footer>
+
+<script>
+document.querySelectorAll('.gallery').forEach(gallery=>{
+    const track = gallery.querySelector('.gallery-track');
+    const items = gallery.querySelectorAll('.gallery-item');
+    const prev = gallery.querySelector('.prev');
+    const next = gallery.querySelector('.next');
+
+    let index = 0;
+    const total = items.length;
+
+    function update(){
+        track.style.transform = `translateX(-${index * 100}%)`;
+    }
+
+    prev.addEventListener('click', ()=>{
+        index = (index - 1 + total) % total;
+        update();
+    });
+
+    next.addEventListener('click', ()=>{
+        index = (index + 1) % total;
+        update();
+    });
+});
+</script>
+
+</body>
+</html>
